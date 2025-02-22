@@ -11,8 +11,12 @@ import streamlit as st
 
 from mplsoccer import VerticalPitch
 
-
 st.title("Euros 2024 Shot Map")
+# Load and display your rounded profile picture at the center
+image_path = "me.jpg"  # Replace with your image path
+st.image(image_path,use_container_width=False, caption="Nicolas Acha", output_format="PNG")
+
+#st.title("Euros 2024 Shot Map")
 st.subheader("Filter to any team/player to see all their shots taken!")
 
 df = pd.read_csv('euros_2024_shot_map.csv')
@@ -51,4 +55,3 @@ fig, ax = pitch.draw(figsize=(10, 10))
 plot_shots(filtered_df, ax, pitch)
 
 st.pyplot(fig)
-
